@@ -180,12 +180,14 @@ def transfer(event_dir, version, pdl_conf, pdl_bin=None, source="us",
         pdl_key = None
 
     # Construct PDL command
+    code1 = eventsource+eventsourcecode
+    
     pdl_cmd = (
         'java -jar %s ' % pdl_bin +
         '--send --configFile=%s ' % pdl_conf +
         '--source=%s ' % source +
         '--eventsource=%s ' % eventsource +
-        '--code=%s ' % code +
+        '--code=%s ' % code1 +
         '--status=%s ' % status +
         '--eventsourcecode=%s ' % eventsourcecode +
         '--version=%s ' % version +
